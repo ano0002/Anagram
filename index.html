@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Annagrame Game</title>
+</head>
+<body>
+    <h1>Annagrame Game</h1>
+    <p>Find all words using the scrambled letters !</p>
+    <input type="text" placeholder="" id="guess-input" disabled autocomplete="off">
+    <main>
+        <button id="delete">DELETE</button>
+        <section>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+        </section>
+        <button id="submit">PLAY</button>
+    </main>
+    <div id="game-info">
+        <p>Score: <span id="score">0</span>/<span id="max-score">0</span></p>
+        <button id="shuffle">⚄</button>
+        <p>Time left: <span id="time">60</span></p>
+    </div>
+    <div id="game-info2">
+        Words found: <p id="words-found"></p>
+    </div>
+    <div id="after-game">
+        Words not found: <p id="words-not-found"></p>
+    </div>
+    <footer>
+        <p>Made with ❤️ by <a href="https://anatole-sot.xyz/portfolio/" target="_blank">Anatole Sot</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

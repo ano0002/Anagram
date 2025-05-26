@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'Junicode';
+    src: url('./Junicode-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 96vh;
+    width: 40vw;
+    margin: 2vw auto 0 auto;
+    font-family: 'Junicode', serif;
+    background-color: #0e0d0d;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 200%;
+}
+
+input {
+    width: 100%;
+    height: 5vw;
+    border: .1vw solid #f0f0f0;
+    background-color: #0e0d0d;
+    text-align: center;
+    color: #f0f0f0;
+    padding: 1vw;
+    font-size: inherit;
+    margin-top: 2vw;
+}
+
+main{
+    display: flex;
+    gap: 2vw;
+    margin-top: 2vw;
+    width: 100%;
+}
+
+main button{
+    width: 16%;
+    border: .1vw solid #f0f0f0;
+    background-color: #291313;
+    color: #f0f0f0;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: inherit;
+    transition: background-color 0.3s ease;
+}
+
+main button:hover {
+    background-color: #521414;
+}
+
+main button:nth-of-type(2) {
+    background-color: #0f130d;
+}
+
+main button:nth-of-type(2):hover {
+    background-color: #14290a;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: .5vw;
+    width: 60%;
+}
+
+.grid-cell {
+    aspect-ratio: 1;
+    display: flex;
+    justify-self: stretch;
+    align-self: stretch;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: .1vw solid #f0f0f0;
+    cursor: pointer;
+    font-size: 200%;
+    transition: background-color 0.3s ease;
+}
+
+.grid-cell:hover {
+    background-color: #2c2c2c;
+}
+
+.grid-cell.selected {
+    background-color: #4a4a4a;
+}
+
+#game-info {
+    width: 100%;
+    padding: .5vw 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+#game-info p {
+    font-size: 100%;
+}
+
+#game-info button {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    font-size: inherit;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#game-info button:hover {
+    animation: swing; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+    animation-iteration-count: infinite; /* this will make the animation repeat indefinitely */
+}
+
+
+#game-info2, #after-game {
+    width: 100%;
+    text-align: left;
+}
+
+#game-info2 p, #after-game p {
+    padding: 0% 2% 2% 2%;
+}
+
+#after-game {
+    display: none;
+}
+
+footer {
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    padding: 0 1vw;
+    font-size: 80%;
+    z-index: -1;
+}
+
+footer a {
+    color: #f0f0f0;
+}
+
+@keyframes swing {
+  20% {
+    transform: translateX(50%) rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    transform: translateX(50%) rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    transform: translateX(50%) rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    transform: translateX(50%) rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    transform: translateX(50%) rotate3d(0, 0, 1, 0deg);
+  }
+}
