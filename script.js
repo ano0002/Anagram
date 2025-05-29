@@ -20,7 +20,7 @@ let foundWords = [];
 let currentInput = '';
 let playing = false;
 let score = 0;
-let timer = 60;
+let timer = 90;
 let timerInterval;
 
 const correctAnswer = [
@@ -157,6 +157,7 @@ function endGame() {
     clearInterval(timerInterval);
     afterGameBox.style.display = 'block';
     wordsNotFoundDisplay.textContent = possibleWords.filter(word => !foundWords.includes(word)).join(', ');
+    alert(`Game Over! Your score is: ${score}/ ${possibleWords.length}`);
     submitButton.textContent = "START";
     deleteInput();
 
